@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <com.dwtedx.qq.view.DropdownListView
+        android:id="@+id/message_chat_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@id/header"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/chat_bottom_shape" >
+
+            <ImageView
+                android:id="@+id/image_face"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:src="@drawable/chat_emo_normal"
+                android:visibility="visible" />
+
+            <com.dwtedx.qq.view.MyEditText
+                android:id="@+id/input_sms"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dip"
+                android:layout_marginRight="9dip"
+                android:layout_toLeftOf="@+id/send_sms"
+                android:layout_toRightOf="@id/image_face"
+                android:background="@null"
+                android:singleLine="true"
+                android:hint="@string/edittext_notice_0"
+                android:padding="4dip"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/send_sms"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/input_sms"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/input_sms"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="#578fbe"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/gray" />
+
+        <include
+            android:id="@+id/chat_face_container"
+            layout="@layout/chat_face_container"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>
